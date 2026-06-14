@@ -1,3 +1,6 @@
+from src.graph import Graph
+
+
 class ParserError(Exception):
     def __init__(self, message: str, line_number: int):
         super().__init__(f"Line {line_number}: {message}")
