@@ -1,10 +1,9 @@
-from src.parser import parser
 from enum import Enum
 from dataclasses import dataclass
 
 
 class ZoneType(Enum):
-    NORNAL = "normal"
+    NORMAL = "normal"
     BLOCKED = "blocked"
     RESTRICTED = "restricted"
     PRIORITY = "priority"
@@ -27,9 +26,19 @@ class Connection:
     max_link_capacity: int
 
 
+@dataclass
+class Drone:
+    id: int
+    current_hub: Hub | None
+    target_hub: Hub | None
+    remaining_turns: int
+    delivered: bool
+
+
 class Graph:
     def __init__(self) -> None:
-        self.hubs: dict[str | Hub] = {}
+        self.hubs: dict[str, Hub] = {}
         self.connections: list[Connection] = []
+
         self.start_hub: Hub | None = None
         self.end_hub: Hub | None = None
