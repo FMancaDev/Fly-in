@@ -133,7 +133,7 @@ class Parser:
 
     def parse(self, filepath: str) -> Tuple[Graph, int]:
         graph = Graph()
-        number_drones: int | None = None
+        nb_drones: int | None = None
 
         with open(filepath, "r", encoding="utf-8") as file:
             for line_number, line in enumerate(file, start=1):
@@ -142,20 +142,20 @@ class Parser:
                 if not line or line.startswith("#"):
                     continue
 
-                if line.startswith("number_drones:"):
-                    if number_drones is not None:
+                if line.startswith("nb_drones:"):
+                    if nb_drones is not None:
                         raise ParserError(
-                            "number_drones defined multiple times",
+                            "nb_drones defined multiple times",
                             line_number
                         )
 
-                    value = line.removeprefix("number_drones:").strip()
+                    value = line.removeprefix("nb_drones:").strip()
 
                     try:
-                        number_drones = int(value)
+                        nb_drones = int(value)
                     except ValueError:
                         raise ParserError(
-                            "number_drones must be an integer",
+                            "nb_drones must be an integer",
                             line_number
                         )
 
@@ -208,7 +208,7 @@ class Parser:
                         graph,
                         line_number
                     )
-                    graph.connection.append(connection)
+                    graph.connections.append(connection)
                 else:
                     raise ParserError(
                         "Unknown line type",
@@ -221,12 +221,12 @@ class Parser:
         if graph.end_hub is None:
             raise ParserError("Missing end_hub", 0)
 
-        if number_drones is None:
-            raise ParserError("Missing number_drones, 0")
+        if nb_drones is None:
+            raise ParserError("Missing nb_drones", 0)
 
-        if number_drones <= 0:
+        if nb_drones <= 0:
             raise ParserError(
-                "number_drones must be greater than 0",
+                "nb_drones must be greater than 0",
                 0
             )
-        return graph, number_drones
+        return graph, nb_drones
