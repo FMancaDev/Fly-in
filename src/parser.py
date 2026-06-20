@@ -1,4 +1,5 @@
 from src.graph import Graph, Hub, ZoneType, Connection
+from typing import Tuple
 
 
 class ParserError(Exception):
@@ -81,4 +82,151 @@ class Parser:
 
         fixed_part = fixed_part.strip()
 
-        if "-" nr
+        if "-" not in fixed_part:
+            raise ParserError("Invalid Connection Format", line_number)
+
+        try:
+            hub1_name, hub2_name = fixed_part.split("-", 1)
+        except ValueError:
+            raise ParserError("Invalid Connection Format", line_number)
+
+        hub1_name = hub1_name.strip()
+        hub2_name = hub2_name.strip()
+
+        if hub1_name not in graph.hubs:
+            raise ParserError(
+                f"Unkmow hub '{hub1_name}'",
+                line_number
+            )
+
+        if hub2_name not in graph.hubs:
+            raise ParserError(
+                f"Unkmow hub '{hub2_name}'",
+                line_number
+            )
+
+        hub1 = graph.hubs[hub1_name]
+        hub2 = graph.hubs[hub2_name]
+
+        try:
+            max_link_capacity = int(
+                metadata.get("max_link_capacity", "1")
+            )
+
+        except ValueError:
+            raise ParserError(
+                "max_link_capacity must be an integer",
+                line_number
+            )
+
+        if max_link_capacity <= 0:
+            raise ParserError(
+                "max_link_capacity must be greater than 0",
+                line_number
+            )
+
+        return Connection(
+            hub1=hub1,
+            hub2=hub2,
+            max_link_capacity=max_link_capacity
+        )
+
+    def parse(self, filepath: str) -> Tuple[Graph, int]:
+        graph = Graph()
+        number_drones: int | None = None
+
+        with open(filepath, "r", encoding="utf-8") as file:
+            for line_number, line in enumerate(file, start=1):
+                line = line.strip()
+
+                if not line or line.startswith("#"):
+                    continue
+
+                if line.startswith("number_drones:"):
+                    if number_drones is not None:
+                        raise ParserError(
+                            "number_drones defined multiple times",
+                            line_number
+                        )
+
+                    value = line.removeprefix("number_drones:").strip()
+
+                    try:
+                        number_drones = int(value)
+                    except ValueError:
+                        raise ParserError(
+                            "number_drones must be an integer",
+                            line_number
+                        )
+
+                elif line.startswith("start_hub:"):
+                    if graph.start_hub is not None:
+                        raise ParserError(
+                            "Multiple start hubs defined",
+                            line_number
+                        )
+
+                    data = line.removeprefix("start_hub:").strip()
+
+                    hub = self._parse_hub(data, line_number)
+
+                    graph.start_hub = hub
+                    graph.hubs[hub.name] = hub
+
+                elif line.startswith("end_hub:"):
+                    if graph.end_hub is not None:
+                        raise ParserError(
+                            "Multiple end hubs defined",
+                            line_number
+                        )
+
+                    data = line.removeprefix("end_hub:").strip()
+
+                    hub = self._parse_hub(data, line_number)
+
+                    graph.end_hub = hub
+                    graph.hubs[hub.name] = hub
+
+                elif line.startswith("hub:"):
+                    data = line.removeprefix("hub:").strip()
+
+                    hub = self._parse_hub(data, line_number)
+
+                    if hub.name in graph.hubs:
+                        raise ParserError(
+                            f"Duplicate hub '{hub.name}'",
+                            line_number
+                        )
+
+                    graph.hubs[hub.name] = hub
+
+                elif line.startswith("connection:"):
+                    data = line.removeprefix("connection:").strip()
+
+                    connection = self._parse_connection(
+                        data,
+                        graph,
+                        line_number
+                    )
+                    graph.connection.append(connection)
+                else:
+                    raise ParserError(
+                        "Unknown line type",
+                        line_number
+                    )
+
+        if graph.start_hub is None:
+            raise ParserError("Missing start_hub", 0)
+
+        if graph.end_hub is None:
+            raise ParserError("Missing end_hub", 0)
+
+        if number_drones is None:
+            raise ParserError("Missing number_drones, 0")
+
+        if number_drones <= 0:
+            raise ParserError(
+                "number_drones must be greater than 0",
+                0
+            )
+        return graph, number_drones
