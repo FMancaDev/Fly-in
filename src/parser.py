@@ -8,9 +8,6 @@ class ParserError(Exception):
 
 
 class Parser:
-    def parse(self, filepath: str) -> Graph:
-        pass
-
     def _parse_metadata(self, data: str, line_number: int) -> dict[str, str]:
         metadata: dict[str, str] = {}
         data = data.strip("[]")
@@ -229,4 +226,5 @@ class Parser:
                 "nb_drones must be greater than 0",
                 0
             )
+        graph.build_adjacency()
         return graph, nb_drones

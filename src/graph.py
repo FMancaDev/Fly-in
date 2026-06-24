@@ -31,14 +31,25 @@ class Drone:
     id: int
     current_hub: Hub | None
     target_hub: Hub | None
-    remaining_turns: int
-    delivered: bool
+    remaining_turns: int = 0
+    delivered: bool = False
 
 
 class Graph:
     def __init__(self) -> None:
         self.hubs: dict[str, Hub] = {}
         self.connections: list[Connection] = []
+        self.adjacency: dict[str, list[Hub]] = {}
 
         self.start_hub: Hub | None = None
         self.end_hub: Hub | None = None
+
+    def build_adjacency(self) -> None:
+        self.adjacency = {}
+
+        for hub_name in self.hubs:
+            self.adjacency[hub_name] = []
+
+        for connection in self.connections:
+            self.adjacency[connection.hub1.name].append(connection.hub2)
+            self.adjacency[connection.hub2.name].append(connection.hub1)
