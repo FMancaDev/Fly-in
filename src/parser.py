@@ -68,7 +68,9 @@ class Parser:
             max_drones=max_drones,
         )
 
-    def _parse_connection(self, data: str, graph: Graph, line_number: int) -> Connection:
+    def _parse_connection(
+            self, data: str, graph: Graph, line_number: int
+    ) -> Connection:
         metadata: dict[str, str] = {}
 
         if "[" in data:

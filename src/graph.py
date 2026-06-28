@@ -1,6 +1,5 @@
 from enum import Enum
-from dataclasses import dataclass
-from pydantic import field
+from dataclasses import dataclass, field
 
 
 class ZoneType(Enum):
@@ -35,6 +34,7 @@ class Drone:
     remaining_turns: int = 0
     delivered: bool = False
     path: list[Hub] = field(default_factory=list)
+    path_index: int = 0
 
 
 class Graph:

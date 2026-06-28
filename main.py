@@ -1,12 +1,13 @@
 from src.parser import Parser
-from src.pathfinding import Pathfinder
+from src.simulation import Simulation
 
 
 def main() -> None:
     parser = Parser()
 
     graph, nb_drones = parser.parse(
-        "maps/medium/02_circular_loop.txt")
+        "maps/medium/02_circular_loop.txt"
+    )
 
     print("=== GRAPH ===")
     print(f"Drones: {nb_drones}")
@@ -14,10 +15,10 @@ def main() -> None:
     print("\nStart Hub:")
     print(graph.start_hub)
 
-    print("\nEnd HUB:")
+    print("\nEnd Hub:")
     print(graph.end_hub)
 
-    print("\nHub:")
+    print("\nHubs:")
     for hub in graph.hubs.values():
         print(hub)
 
@@ -25,19 +26,47 @@ def main() -> None:
     for connection in graph.connections:
         print(connection)
 
-    Path_finder = Pathfinder()
+    simulation = Simulation(graph, nb_drones)
 
-    path = Path_finder.find_path(
-        graph, graph.start_hub, graph.end_hub
+    print("\n=== DRONES ===")
+    for drone in simulation.drones:
+        print(
+            f"Drone {drone.id}: "
+            f"{' -> '.join(hub.name for hub in drone.path)}"
+        )
+
+    print("\n=== SIMULATION ===")
+
+    while not simulation.all_delivered():
+        simulation.simulate_turn()
+
+        print(f"\nTurn {simulation.turn}")
+
+        for drone in simulation.drones:
+            current = (
+                drone.current_hub.name
+                if drone.current_hub is not None
+                else "None"
+            )
+
+            target = (
+                drone.target_hub.name
+                if drone.target_hub is not None
+                else "None"
+            )
+
+            print(
+                f"Drone {drone.id}: "
+                f"current={current}, "
+                f"target={target}, "
+                f"remaining={drone.remaining_turns}, "
+                f"delivered={drone.delivered}"
+            )
+
+    print(
+        f"\nSimulation finished in "
+        f"{simulation.turn} turns"
     )
-
-    print("\nShortest path:")
-
-    if not path:
-        print("No path found")
-    else:
-        for hub in path:
-            print(hub.name)
 
 
 if __name__ == "__main__":
