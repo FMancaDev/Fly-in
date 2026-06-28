@@ -1,60 +1,83 @@
 from src.graph import Graph, Hub, ZoneType
+from typing import Tuple
 
 
 class Pathfinder:
-    def find_path(self, graph: Graph, start: Hub, end: Hub) -> list[Hub]:
+    def find_path(
+        self,
+        graph: Graph,
+        start: Hub,
+        end: Hub,
+        blocked_hubs: set[str] | None = None,
+        blocked_connections: set[Tuple[str, str]] | None = None
+    ) -> list[Hub]:
+
+        blocked_hubs = blocked_hubs or set()
+        blocked_connections = blocked_connections or set()
 
         distances: dict[str, float] = {
-            hub_name: float("inf") for hub_name in graph.hubs}
+            name: float("inf") for name in graph.hubs
+        }
         previous: dict[str, Hub | None] = {
-            hub_name: None for hub_name in graph.hubs}
+            name: None for name in graph.hubs
+        }
 
         visited: set[str] = set()
         distances[start.name] = 0
 
-        while len(visited) < len(graph.hubs):
-            current: Hub | None = None
+        while True:
+            current = None
             current_distance = float("inf")
 
-            for hub_name, distance in distances.items():
-                if hub_name not in visited and distance < current_distance:
-                    current = graph.hubs[hub_name]
-                    current_distance = distance
+            for name, dist in distances.items():
+                if name not in visited and dist < current_distance:
+                    current = graph.hubs[name]
+                    current_distance = dist
 
             if current is None:
                 break
-            if current == end:
+
+            if current.name == end.name:
                 break
 
             visited.add(current.name)
 
             for neighbor in graph.adjacency[current.name]:
+
                 if neighbor.name in visited:
                     continue
 
-                if neighbor.zone_type == ZoneType.NORMAL:
-                    move_cost = 1
-                elif neighbor.zone_type == ZoneType.RESTRICTED:
-                    move_cost = 2
-                elif neighbor.zone_type == ZoneType.PRIORITY:
-                    move_cost = 1
-                elif neighbor.zone_type == ZoneType.BLOCKED:
+                if neighbor.name in blocked_hubs:
                     continue
 
-                new_distance = (distances[current.name] + move_cost)
+                if neighbor.zone_type == ZoneType.BLOCKED:
+                    continue
 
-                if new_distance < distances[neighbor.name]:
-                    distances[neighbor.name] = new_distance
+                if (
+                    (current.name, neighbor.name) in blocked_connections
+                    or (neighbor.name, current.name) in blocked_connections
+                ):
+                    continue
+
+                if neighbor.zone_type == ZoneType.RESTRICTED:
+                    cost = 2
+                else:
+                    cost = 1
+
+                new_dist = distances[current.name] + cost
+
+                if new_dist < distances[neighbor.name]:
+                    distances[neighbor.name] = new_dist
                     previous[neighbor.name] = current
 
         if distances[end.name] == float("inf"):
             return []
 
         path: list[Hub] = []
-        current: Hub | None = end
+        node: Hub | None = end
 
-        while current is not None:
-            path.append(current)
-            current = previous[current.name]
-        path.reverse()
-        return path
+        while node is not None:
+            path.append(node)
+            node = previous[node.name]
+
+        return path[::-1]

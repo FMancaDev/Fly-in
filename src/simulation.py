@@ -1,4 +1,4 @@
-from src.graph import Graph, Drone
+from src.graph import Graph, Drone, ZoneType
 from src.pathfinding import Pathfinder
 
 
@@ -10,31 +10,51 @@ class Simulation:
         self.turn = 0
         self.drones: list[Drone] = []
 
-        if self.graph.start_hub is None:
-            raise ValueError("Graph has no start_hub")
+        if not graph.start_hub or not graph.end_hub:
+            raise ValueError("Graph missing start or end hub")
 
-        if self.graph.end_hub is None:
-            raise ValueError("Graph has no end_hub")
+        main_path = self.pathfinder.find_path(
+            graph,
+            graph.start_hub,
+            graph.end_hub
+        )
 
-        for drone_id in range(1, nb_drones + 1):
-            path = self.pathfinder.find_path(
-                self.graph,
-                self.graph.start_hub,
-                self.graph.end_hub
+        alternative_path = []
+
+        if len(main_path) > 2:
+
+            blocked_connections = {
+                (main_path[1].name, main_path[2].name),
+                (main_path[2].name, main_path[1].name),
+            }
+
+            print("blocked_connections:", blocked_connections)
+
+            alternative_path = self.pathfinder.find_path(
+                graph,
+                graph.start_hub,
+                graph.end_hub,
+                blocked_connections=blocked_connections
             )
 
-            drone = Drone(
-                id=drone_id,
-                current_hub=self.graph.start_hub,
-                target_hub=None,
-                path=path,
-                path_index=0
-            )
-            self.drones.append(drone)
+        print("Main path:", [h.name for h in main_path])
+        print("Alternative path:", [h.name for h in alternative_path])
 
-    def run(self) -> None:
-        while not self.all_delivered():
-            self.simulate_turn()
+        for i in range(nb_drones):
+            if alternative_path and i % 2 == 1:
+                path = alternative_path
+            else:
+                path = main_path
+
+            self.drones.append(
+                Drone(
+                    id=i + 1,
+                    current_hub=graph.start_hub,
+                    target_hub=None,
+                    path=path,
+                    path_index=0
+                )
+            )
 
     def simulate_turn(self) -> None:
         self.turn += 1
@@ -43,76 +63,54 @@ class Simulation:
             if drone.delivered:
                 continue
 
-            # drone a espera do outro a frente
+            # ainda em movimento
             if drone.remaining_turns > 0:
                 drone.remaining_turns -= 1
 
-                if drone.remaining_turns == 0:
-                    if drone.target_hub is not None:
-                        drone.current_hub = drone.target_hub
-                        drone.target_hub = None
-                        drone.path_index += 1
+                if drone.remaining_turns == 0 and drone.target_hub:
+                    drone.current_hub = drone.target_hub
+                    drone.target_hub = None
+                    drone.path_index += 1
+
+                    if drone.current_hub == self.graph.end_hub:
+                        drone.delivered = True
                 continue
 
-            # drone chegou ao destino
             if drone.current_hub == self.graph.end_hub:
                 drone.delivered = True
                 continue
 
-            # drone pronto para se mover
             if drone.path_index + 1 >= len(drone.path):
                 continue
 
             next_hub = drone.path[drone.path_index + 1]
 
-            # verifica a capacidade do hub destino
-            hub_capacity_usage = sum(
-                1
-                for other in self.drones
-                if other.current_hub == next_hub
-                and other.remaining_turns == 0
-            )
-
-            if hub_capacity_usage >= next_hub.max_drones:
+            if sum(
+                1 for d in self.drones
+                if d.current_hub == next_hub and d.remaining_turns == 0
+            ) >= next_hub.max_drones:
                 continue
 
-            # encontrar ligacao correspondente
             connection = next(
                 (
-                    conn
-                    for conn in self.graph.connections
-                    if (
-                        conn.hub1 == drone.current_hub
-                        and conn.hub2 == next_hub
-                    )
-                    or (
-                        conn.hub2 == drone.current_hub
-                        and conn.hub1 == next_hub
-                    )
+                    c for c in self.graph.connections
+                    if (c.hub1 == drone.current_hub and c.hub2 == next_hub)
+                    or (c.hub2 == drone.current_hub and c.hub1 == next_hub)
                 ),
-                None,
+                None
             )
 
-            if connection is None:
+            if not connection:
                 continue
 
-            # verifica a capacidadr da ligacao
-            link_usage = sum(
-                1
-                for other in self.drones
-                if other.target_hub == next_hub
-                and other.remaining_turns > 0
-            )
-
-            if link_usage >= connection.max_link_capacity:
+            if sum(
+                1 for d in self.drones
+                if d.target_hub == next_hub and d.remaining_turns > 0
+            ) >= connection.max_link_capacity:
                 continue
 
-            # iniciar movimento
             drone.target_hub = next_hub
-            if next_hub.zone_type.name == "RESTRICTED":
-                drone.remaining_turns = 2
-            else:
-                drone.remaining_turns = 1
+            drone.remaining_turns = 2 if next_hub.zone_type == ZoneType.RESTRICTED else 1
 
     def all_delivered(self) -> bool:
-        return all(drone.delivered for drone in self.drones)
+        return all(d.delivered for d in self.drones)
