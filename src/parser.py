@@ -69,7 +69,10 @@ class Parser:
         )
 
     def _parse_connection(
-            self, data: str, graph: Graph, line_number: int
+        self,
+        data: str,
+        graph: Graph,
+        line_number: int,
     ) -> Connection:
         metadata: dict[str, str] = {}
 
@@ -94,14 +97,14 @@ class Parser:
 
         if hub1_name not in graph.hubs:
             raise ParserError(
-                f"Unkmow hub '{hub1_name}'",
-                line_number
+                f"Unknown hub '{hub1_name}'",
+                line_number,
             )
 
         if hub2_name not in graph.hubs:
             raise ParserError(
-                f"Unkmow hub '{hub2_name}'",
-                line_number
+                f"Unknown hub '{hub2_name}'",
+                line_number,
             )
 
         hub1 = graph.hubs[hub1_name]
@@ -111,23 +114,22 @@ class Parser:
             max_link_capacity = int(
                 metadata.get("max_link_capacity", "1")
             )
-
         except ValueError:
             raise ParserError(
                 "max_link_capacity must be an integer",
-                line_number
+                line_number,
             )
 
         if max_link_capacity <= 0:
             raise ParserError(
                 "max_link_capacity must be greater than 0",
-                line_number
+                line_number,
             )
 
         return Connection(
             hub1=hub1,
             hub2=hub2,
-            max_link_capacity=max_link_capacity
+            max_link_capacity=max_link_capacity,
         )
 
     def parse(self, filepath: str) -> Tuple[Graph, int]:
@@ -145,7 +147,7 @@ class Parser:
                     if nb_drones is not None:
                         raise ParserError(
                             "nb_drones defined multiple times",
-                            line_number
+                            line_number,
                         )
 
                     value = line.removeprefix("nb_drones:").strip()
@@ -155,14 +157,14 @@ class Parser:
                     except ValueError:
                         raise ParserError(
                             "nb_drones must be an integer",
-                            line_number
+                            line_number,
                         )
 
                 elif line.startswith("start_hub:"):
                     if graph.start_hub is not None:
                         raise ParserError(
                             "Multiple start hubs defined",
-                            line_number
+                            line_number,
                         )
 
                     data = line.removeprefix("start_hub:").strip()
@@ -176,7 +178,7 @@ class Parser:
                     if graph.end_hub is not None:
                         raise ParserError(
                             "Multiple end hubs defined",
-                            line_number
+                            line_number,
                         )
 
                     data = line.removeprefix("end_hub:").strip()
@@ -194,7 +196,7 @@ class Parser:
                     if hub.name in graph.hubs:
                         raise ParserError(
                             f"Duplicate hub '{hub.name}'",
-                            line_number
+                            line_number,
                         )
 
                     graph.hubs[hub.name] = hub
@@ -205,13 +207,15 @@ class Parser:
                     connection = self._parse_connection(
                         data,
                         graph,
-                        line_number
+                        line_number,
                     )
+
                     graph.connections.append(connection)
+
                 else:
                     raise ParserError(
                         "Unknown line type",
-                        line_number
+                        line_number,
                     )
 
         if graph.start_hub is None:
@@ -226,7 +230,9 @@ class Parser:
         if nb_drones <= 0:
             raise ParserError(
                 "nb_drones must be greater than 0",
-                0
+                0,
             )
+
         graph.build_adjacency()
+
         return graph, nb_drones
