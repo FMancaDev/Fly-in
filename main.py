@@ -6,7 +6,7 @@ def main() -> None:
     parser = Parser()
 
     graph, nb_drones = parser.parse(
-        "maps/medium/02_circular_loop.txt"
+        "maps/challenger/01_the_impossible_dream.txt"
     )
 
     print("=== GRAPH ===")

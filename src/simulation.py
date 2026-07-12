@@ -1,4 +1,4 @@
-from typing import List, Tuple, Set, Dict
+from typing import List, Tuple, Dict
 from src.graph import Graph, Drone, Hub, ZoneType
 from src.pathfinding import Pathfinder
 
@@ -14,13 +14,16 @@ class Simulation:
         if graph.start_hub is None or graph.end_hub is None:
             raise ValueError("Graph missing start or end hub")
 
+        main_path = self.pathfinder.find_path(
+            graph, graph.start_hub, graph.end_hub)
+
         for i in range(nb_drones):
             self.drones.append(
                 Drone(
                     id=i + 1,
                     current_hub=graph.start_hub,
                     target_hub=None,
-                    path=[],
+                    path=list(main_path),
                     path_index=0,
                 )
             )
@@ -36,22 +39,22 @@ class Simulation:
                 if drone.remaining_turns == 0 and drone.target_hub is not None:
                     drone.current_hub = drone.target_hub
                     drone.target_hub = None
+                    if drone.current_hub in drone.path:
+                        drone.path_index = drone.path.index(drone.current_hub)
                     if drone.current_hub == self.graph.end_hub:
                         drone.delivered = True
 
-        current_hub_occupancy: Dict[str, int] = {}
+        hub_occupancy: Dict[str, int] = {}
         for hub_name, hub in self.graph.hubs.items():
             if hub == self.graph.start_hub or hub == self.graph.end_hub:
                 continue
-            count = sum(
+            hub_occupancy[hub_name] = sum(
                 1 for d in self.drones
-                if d.current_hub == hub and d.remaining_turns == 0 and not d.delivered and d.target_hub is None
+                if d.current_hub == hub and d.remaining_turns == 0 and
+                not d.delivered and d.target_hub is None
             )
-            current_hub_occupancy[hub_name] = count
 
-        future_hub_incoming: Dict[str, int] = {}
         active_link_usage: Dict[Tuple[str, str], int] = {}
-
         for other in self.drones:
             if other.target_hub is not None and other.remaining_turns > 0:
                 link_key = tuple(
@@ -60,86 +63,58 @@ class Simulation:
                     link_key, 0) + 1
 
         planned_moves: List[Tuple[Drone, Hub, int]] = []
-
         drones_ready = [
             d for d in self.drones
-            if not d.delivered and d.remaining_turns == 0 and d.current_hub != self.graph.end_hub
+            if not d.delivered and d.remaining_turns == 0
+            and d.current_hub != self.graph.end_hub
         ]
 
-        def get_dynamic_priority(d: Drone) -> Tuple[int, int, int]:
-            is_at_start = 1 if d.current_hub == self.graph.start_hub else 0
-            p = self.pathfinder.find_path(
-                self.graph, d.current_hub, self.graph.end_hub)
-            dist = len(p) if p else 999
-            return (is_at_start, dist, d.id)
+        drones_ready.sort(key=lambda d: (-d.path_index, d.id))
 
-        drones_ready.sort(key=get_dynamic_priority)
+        for drone in drones_ready:
+            if drone.path_index + 1 >= len(drone.path):
+                continue
 
-        while True:
-            moved_any = False
-            for drone in drones_ready:
-                if drone in [move[0] for move in planned_moves]:
+            next_hub = drone.path[drone.path_index + 1]
+
+            if (next_hub != self.graph.end_hub and
+                    next_hub != self.graph.start_hub):
+                if hub_occupancy.get(next_hub.name, 0) >= next_hub.max_drones:
                     continue
 
-                optimal_path = self.pathfinder.find_path(
-                    self.graph, drone.current_hub, self.graph.end_hub)
-                if not optimal_path or len(optimal_path) < 2:
-                    continue
+            link_key = tuple(sorted((drone.current_hub.name, next_hub.name)))
+            connection = next((c for c in self.graph.connections if (
+                c.hub1.name, c.hub2.name) == link_key or
+                (c.hub2.name, c.hub1.name) == link_key), None)
 
-                preferred_next = optimal_path[1]
-                dest_occupancy = current_hub_occupancy.get(
-                    preferred_next.name, 0) + future_hub_incoming.get(preferred_next.name, 0)
+            if (connection and active_link_usage.get(link_key, 0)
+                    >= connection.max_link_capacity):
+                continue
 
-                next_hub = preferred_next
+            if drone.current_hub != self.graph.start_hub:
+                hub_occupancy[drone.current_hub.name] -= 1
+            if (next_hub != self.graph.end_hub and
+                    next_hub != self.graph.start_hub):
+                hub_occupancy[next_hub.name] = hub_occupancy.get(
+                    next_hub.name, 0) + 1
 
-                if preferred_next != self.graph.end_hub and dest_occupancy >= preferred_next.max_drones:
-                    blocked_hubs = {preferred_next.name}
-                    alt_path = self.pathfinder.find_path(
-                        self.graph, drone.current_hub, self.graph.end_hub, blocked_hubs=blocked_hubs)
-
-                    if alt_path and len(alt_path) >= 2:
-                        next_hub = alt_path[1]
-
-                if next_hub != self.graph.end_hub and next_hub != self.graph.start_hub:
-                    if current_hub_occupancy.get(next_hub.name, 0) + future_hub_incoming.get(next_hub.name, 0) >= next_hub.max_drones:
-                        continue
-
-                connection = next(
-                    (conn for conn in self.graph.connections
-                     if (conn.hub1 == drone.current_hub and conn.hub2 == next_hub) or
-                        (conn.hub2 == drone.current_hub and conn.hub1 == next_hub)),
-                    None
-                )
-                if connection is None:
-                    continue
-
-                link_key = tuple(
-                    sorted((drone.current_hub.name, next_hub.name)))
-                if active_link_usage.get(link_key, 0) >= connection.max_link_capacity:
-                    continue
-
-                if drone.current_hub != self.graph.start_hub:
-                    if drone.current_hub.name in current_hub_occupancy:
-                        current_hub_occupancy[drone.current_hub.name] = max(
-                            0, current_hub_occupancy[drone.current_hub.name] - 1)
-
-                if next_hub != self.graph.end_hub and next_hub != self.graph.start_hub:
-                    future_hub_incoming[next_hub.name] = future_hub_incoming.get(
-                        next_hub.name, 0) + 1
-                active_link_usage[link_key] = active_link_usage.get(
-                    link_key, 0) + 1
-
-                travel_time = 2 if next_hub.zone_type == ZoneType.RESTRICTED else 1
-                planned_moves.append((drone, next_hub, travel_time))
-                drone.path = list(optimal_path)
-                moved_any = True
-
-            if not moved_any:
-                break
+            active_link_usage[link_key] = active_link_usage.get(
+                link_key, 0) + 1
+            travel_time = 2 if next_hub.zone_type == ZoneType.RESTRICTED else 1
+            planned_moves.append((drone, next_hub, travel_time))
 
         for drone, next_hub, travel_time in planned_moves:
-            drone.target_hub = next_hub
-            drone.remaining_turns = travel_time
+            if travel_time == 1:
+                drone.current_hub = next_hub
+                drone.target_hub = None
+                drone.remaining_turns = 0
+                drone.path_index += 1
+
+                if drone.current_hub == self.graph.end_hub:
+                    drone.delivered = True
+            else:
+                drone.target_hub = next_hub
+                drone.remaining_turns = travel_time
 
     def all_delivered(self) -> bool:
         return all(drone.delivered for drone in self.drones)

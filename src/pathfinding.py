@@ -34,7 +34,8 @@ class Pathfinder:
                     current = graph.hubs[name]
                     current_distance = distance
 
-            if current is None or current == end or current_distance == float("inf"):
+            if (current is None or current == end or
+                    current_distance == float("inf")):
                 break
 
             visited.add(current.name)
