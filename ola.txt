@@ -1,0 +1,1545 @@
+=== GRAPH ===
+Drones: 25
+
+Start Hub:
+Hub(name='start', x=0, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='green', max_drones=25)
+
+End Hub:
+Hub(name='impossible_goal', x=23, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='rainbow', max_drones=25)
+
+Hubs:
+Hub(name='start', x=0, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='green', max_drones=25)
+Hub(name='gate_hell1', x=2, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1)
+Hub(name='gate_hell2', x=3, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1)
+Hub(name='gate_hell3', x=4, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1)
+Hub(name='gate_hell4', x=5, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1)
+Hub(name='gate_hell5', x=6, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1)
+Hub(name='maze_trap_a1', x=2, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1)
+Hub(name='maze_trap_a2', x=3, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1)
+Hub(name='maze_trap_a3', x=4, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1)
+Hub(name='maze_dead_a', x=5, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='black', max_drones=1)
+Hub(name='maze_trap_b1', x=2, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1)
+Hub(name='maze_trap_b2', x=3, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1)
+Hub(name='maze_trap_b3', x=4, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1)
+Hub(name='maze_dead_b', x=5, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='black', max_drones=1)
+Hub(name='maze_loop1', x=2, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1)
+Hub(name='maze_loop2', x=3, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1)
+Hub(name='maze_loop3', x=4, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1)
+Hub(name='maze_loop4', x=5, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1)
+Hub(name='maze_loop5', x=6, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1)
+Hub(name='maze_loop6', x=6, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1)
+Hub(name='micro_gate1', x=7, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1)
+Hub(name='micro_gate2', x=8, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1)
+Hub(name='micro_gate3', x=9, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1)
+Hub(name='overflow_hell1', x=7, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2)
+Hub(name='overflow_hell2', x=8, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2)
+Hub(name='overflow_hell3', x=9, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2)
+Hub(name='overflow_hell4', x=7, y=-1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2)
+Hub(name='overflow_hell5', x=8, y=-1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2)
+Hub(name='overflow_hell6', x=9, y=-1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2)
+Hub(name='false_hope1', x=10, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=3)
+Hub(name='false_hope2', x=11, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=2)
+Hub(name='false_hope3', x=12, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1)
+Hub(name='priority_trap1', x=10, y=1, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1)
+Hub(name='priority_trap2', x=11, y=1, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1)
+Hub(name='priority_dead', x=12, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='black', max_drones=1)
+Hub(name='priority_trap3', x=10, y=-1, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1)
+Hub(name='priority_trap4', x=11, y=-1, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1)
+Hub(name='priority_dead2', x=12, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='black', max_drones=1)
+Hub(name='conv_restricted1', x=13, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1)
+Hub(name='conv_restricted2', x=14, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1)
+Hub(name='conv_restricted3', x=15, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1)
+Hub(name='conv_restricted4', x=13, y=0, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1)
+Hub(name='conv_restricted5', x=14, y=0, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1)
+Hub(name='conv_restricted6', x=15, y=0, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1)
+Hub(name='conv_restricted7', x=13, y=-2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1)
+Hub(name='conv_restricted8', x=14, y=-2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1)
+Hub(name='conv_restricted9', x=15, y=-2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1)
+Hub(name='final_merge', x=16, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='violet', max_drones=5)
+Hub(name='final_torture1', x=17, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=2)
+Hub(name='final_torture2', x=18, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=1)
+Hub(name='final_torture3', x=19, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=1)
+Hub(name='final_torture4', x=20, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=1)
+Hub(name='final_torture5', x=21, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=1)
+Hub(name='impossible_goal', x=23, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='rainbow', max_drones=25)
+
+Connections:
+Connection(hub1=Hub(name='start', x=0, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='green', max_drones=25), hub2=Hub(name='gate_hell1', x=2, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='gate_hell1', x=2, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1), hub2=Hub(name='gate_hell2', x=3, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='gate_hell2', x=3, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1), hub2=Hub(name='gate_hell3', x=4, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='gate_hell3', x=4, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1), hub2=Hub(name='gate_hell4', x=5, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='gate_hell4', x=5, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1), hub2=Hub(name='gate_hell5', x=6, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='gate_hell1', x=2, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1), hub2=Hub(name='maze_trap_a1', x=2, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='gate_hell2', x=3, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1), hub2=Hub(name='maze_trap_b1', x=2, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='gate_hell3', x=4, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1), hub2=Hub(name='maze_loop1', x=2, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_trap_a1', x=2, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), hub2=Hub(name='maze_trap_a2', x=3, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_trap_a2', x=3, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), hub2=Hub(name='maze_trap_a3', x=4, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_trap_a3', x=4, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), hub2=Hub(name='maze_dead_a', x=5, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='black', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_trap_b1', x=2, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), hub2=Hub(name='maze_trap_b2', x=3, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_trap_b2', x=3, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), hub2=Hub(name='maze_trap_b3', x=4, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_trap_b3', x=4, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), hub2=Hub(name='maze_dead_b', x=5, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='black', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_loop1', x=2, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), hub2=Hub(name='maze_loop2', x=3, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_loop2', x=3, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), hub2=Hub(name='maze_loop3', x=4, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_loop3', x=4, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), hub2=Hub(name='maze_loop4', x=5, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_loop4', x=5, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), hub2=Hub(name='maze_loop5', x=6, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_loop5', x=6, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), hub2=Hub(name='maze_loop6', x=6, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_loop6', x=6, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), hub2=Hub(name='maze_loop1', x=2, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_trap_a2', x=3, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), hub2=Hub(name='micro_gate1', x=7, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_trap_b2', x=3, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='purple', max_drones=1), hub2=Hub(name='micro_gate1', x=7, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='maze_loop3', x=4, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='brown', max_drones=1), hub2=Hub(name='micro_gate2', x=8, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='gate_hell5', x=6, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='red', max_drones=1), hub2=Hub(name='micro_gate1', x=7, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='micro_gate1', x=7, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), hub2=Hub(name='micro_gate2', x=8, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='micro_gate2', x=8, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), hub2=Hub(name='micro_gate3', x=9, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='micro_gate1', x=7, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), hub2=Hub(name='overflow_hell1', x=7, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), max_link_capacity=1)
+Connection(hub1=Hub(name='micro_gate2', x=8, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), hub2=Hub(name='overflow_hell2', x=8, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), max_link_capacity=1)
+Connection(hub1=Hub(name='micro_gate3', x=9, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), hub2=Hub(name='overflow_hell3', x=9, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), max_link_capacity=1)
+Connection(hub1=Hub(name='micro_gate1', x=7, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), hub2=Hub(name='overflow_hell4', x=7, y=-1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), max_link_capacity=1)
+Connection(hub1=Hub(name='micro_gate2', x=8, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), hub2=Hub(name='overflow_hell5', x=8, y=-1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), max_link_capacity=1)
+Connection(hub1=Hub(name='micro_gate3', x=9, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), hub2=Hub(name='overflow_hell6', x=9, y=-1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), max_link_capacity=1)
+Connection(hub1=Hub(name='overflow_hell1', x=7, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), hub2=Hub(name='overflow_hell2', x=8, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), max_link_capacity=1)
+Connection(hub1=Hub(name='overflow_hell2', x=8, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), hub2=Hub(name='overflow_hell3', x=9, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), max_link_capacity=1)
+Connection(hub1=Hub(name='overflow_hell4', x=7, y=-1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), hub2=Hub(name='overflow_hell5', x=8, y=-1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), max_link_capacity=1)
+Connection(hub1=Hub(name='overflow_hell5', x=8, y=-1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), hub2=Hub(name='overflow_hell6', x=9, y=-1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), max_link_capacity=1)
+Connection(hub1=Hub(name='overflow_hell3', x=9, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), hub2=Hub(name='false_hope1', x=10, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=3), max_link_capacity=1)
+Connection(hub1=Hub(name='overflow_hell6', x=9, y=-1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), hub2=Hub(name='false_hope1', x=10, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=3), max_link_capacity=1)
+Connection(hub1=Hub(name='micro_gate3', x=9, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='orange', max_drones=1), hub2=Hub(name='false_hope1', x=10, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=3), max_link_capacity=1)
+Connection(hub1=Hub(name='false_hope1', x=10, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=3), hub2=Hub(name='false_hope2', x=11, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=2), max_link_capacity=1)
+Connection(hub1=Hub(name='false_hope2', x=11, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=2), hub2=Hub(name='false_hope3', x=12, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='false_hope1', x=10, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=3), hub2=Hub(name='priority_trap1', x=10, y=1, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='false_hope2', x=11, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=2), hub2=Hub(name='priority_trap2', x=11, y=1, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='false_hope3', x=12, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), hub2=Hub(name='priority_dead', x=12, y=1, zone_type=<ZoneType.NORMAL: 'normal'>, color='black', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='false_hope1', x=10, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=3), hub2=Hub(name='priority_trap3', x=10, y=-1, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='false_hope2', x=11, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=2), hub2=Hub(name='priority_trap4', x=11, y=-1, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='false_hope3', x=12, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), hub2=Hub(name='priority_dead2', x=12, y=-1, zone_type=<ZoneType.NORMAL: 'normal'>, color='black', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='priority_trap1', x=10, y=1, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), hub2=Hub(name='priority_trap2', x=11, y=1, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='priority_trap3', x=10, y=-1, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), hub2=Hub(name='priority_trap4', x=11, y=-1, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='false_hope3', x=12, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), hub2=Hub(name='conv_restricted1', x=13, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='false_hope3', x=12, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), hub2=Hub(name='conv_restricted4', x=13, y=0, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='false_hope3', x=12, y=0, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), hub2=Hub(name='conv_restricted7', x=13, y=-2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='conv_restricted1', x=13, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), hub2=Hub(name='conv_restricted2', x=14, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='conv_restricted2', x=14, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), hub2=Hub(name='conv_restricted3', x=15, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='conv_restricted4', x=13, y=0, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), hub2=Hub(name='conv_restricted5', x=14, y=0, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='conv_restricted5', x=14, y=0, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), hub2=Hub(name='conv_restricted6', x=15, y=0, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='conv_restricted7', x=13, y=-2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), hub2=Hub(name='conv_restricted8', x=14, y=-2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='conv_restricted8', x=14, y=-2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), hub2=Hub(name='conv_restricted9', x=15, y=-2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='conv_restricted3', x=15, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), hub2=Hub(name='final_merge', x=16, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='violet', max_drones=5), max_link_capacity=1)
+Connection(hub1=Hub(name='conv_restricted6', x=15, y=0, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), hub2=Hub(name='final_merge', x=16, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='violet', max_drones=5), max_link_capacity=1)
+Connection(hub1=Hub(name='conv_restricted9', x=15, y=-2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), hub2=Hub(name='final_merge', x=16, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='violet', max_drones=5), max_link_capacity=1)
+Connection(hub1=Hub(name='final_merge', x=16, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='violet', max_drones=5), hub2=Hub(name='final_torture1', x=17, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=2), max_link_capacity=1)
+Connection(hub1=Hub(name='final_torture1', x=17, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=2), hub2=Hub(name='final_torture2', x=18, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='final_torture2', x=18, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=1), hub2=Hub(name='final_torture3', x=19, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='final_torture3', x=19, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=1), hub2=Hub(name='final_torture4', x=20, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='final_torture4', x=20, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=1), hub2=Hub(name='final_torture5', x=21, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='final_torture5', x=21, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='crimson', max_drones=1), hub2=Hub(name='impossible_goal', x=23, y=0, zone_type=<ZoneType.NORMAL: 'normal'>, color='rainbow', max_drones=25), max_link_capacity=1)
+Connection(hub1=Hub(name='overflow_hell1', x=7, y=1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), hub2=Hub(name='conv_restricted1', x=13, y=2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='overflow_hell4', x=7, y=-1, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='maroon', max_drones=2), hub2=Hub(name='conv_restricted7', x=13, y=-2, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), max_link_capacity=1)
+Connection(hub1=Hub(name='priority_trap1', x=10, y=1, zone_type=<ZoneType.PRIORITY: 'priority'>, color='gold', max_drones=1), hub2=Hub(name='conv_restricted4', x=13, y=0, zone_type=<ZoneType.RESTRICTED: 'restricted'>, color='darkred', max_drones=1), max_link_capacity=1)
+
+=== DRONES ===
+Drone 1: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 2: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell4 -> conv_restricted7 -> conv_restricted8 -> conv_restricted9 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 3: start -> gate_hell1 -> gate_hell2 -> maze_trap_b1 -> maze_trap_b2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 4: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 5: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell4 -> conv_restricted7 -> conv_restricted8 -> conv_restricted9 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 6: start -> gate_hell1 -> gate_hell2 -> maze_trap_b1 -> maze_trap_b2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 7: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 8: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell4 -> conv_restricted7 -> conv_restricted8 -> conv_restricted9 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 9: start -> gate_hell1 -> gate_hell2 -> maze_trap_b1 -> maze_trap_b2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 10: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 11: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell4 -> conv_restricted7 -> conv_restricted8 -> conv_restricted9 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 12: start -> gate_hell1 -> gate_hell2 -> maze_trap_b1 -> maze_trap_b2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 13: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 14: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell4 -> conv_restricted7 -> conv_restricted8 -> conv_restricted9 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 15: start -> gate_hell1 -> gate_hell2 -> maze_trap_b1 -> maze_trap_b2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 16: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 17: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell4 -> conv_restricted7 -> conv_restricted8 -> conv_restricted9 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 18: start -> gate_hell1 -> gate_hell2 -> maze_trap_b1 -> maze_trap_b2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 19: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 20: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell4 -> conv_restricted7 -> conv_restricted8 -> conv_restricted9 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 21: start -> gate_hell1 -> gate_hell2 -> maze_trap_b1 -> maze_trap_b2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 22: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 23: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell4 -> conv_restricted7 -> conv_restricted8 -> conv_restricted9 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 24: start -> gate_hell1 -> gate_hell2 -> maze_trap_b1 -> maze_trap_b2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+Drone 25: start -> gate_hell1 -> maze_trap_a1 -> maze_trap_a2 -> micro_gate1 -> overflow_hell1 -> conv_restricted1 -> conv_restricted2 -> conv_restricted3 -> final_merge -> final_torture1 -> final_torture2 -> final_torture3 -> final_torture4 -> final_torture5 -> impossible_goal
+
+=== SIMULATION ===
+
+Turn 1
+Drone 1: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 2: current=start, target=None, remaining=0, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=start, target=None, remaining=0, delivered=False
+Drone 5: current=start, target=None, remaining=0, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=start, target=None, remaining=0, delivered=False
+Drone 8: current=start, target=None, remaining=0, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=start, target=None, remaining=0, delivered=False
+Drone 11: current=start, target=None, remaining=0, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=start, target=None, remaining=0, delivered=False
+Drone 14: current=start, target=None, remaining=0, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=start, target=None, remaining=0, delivered=False
+Drone 17: current=start, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=start, target=None, remaining=0, delivered=False
+Drone 20: current=start, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 2
+Drone 1: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 2: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=start, target=None, remaining=0, delivered=False
+Drone 5: current=start, target=None, remaining=0, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=start, target=None, remaining=0, delivered=False
+Drone 8: current=start, target=None, remaining=0, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=start, target=None, remaining=0, delivered=False
+Drone 11: current=start, target=None, remaining=0, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=start, target=None, remaining=0, delivered=False
+Drone 14: current=start, target=None, remaining=0, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=start, target=None, remaining=0, delivered=False
+Drone 17: current=start, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=start, target=None, remaining=0, delivered=False
+Drone 20: current=start, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 3
+Drone 1: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 2: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 5: current=start, target=None, remaining=0, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=start, target=None, remaining=0, delivered=False
+Drone 8: current=start, target=None, remaining=0, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=start, target=None, remaining=0, delivered=False
+Drone 11: current=start, target=None, remaining=0, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=start, target=None, remaining=0, delivered=False
+Drone 14: current=start, target=None, remaining=0, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=start, target=None, remaining=0, delivered=False
+Drone 17: current=start, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=start, target=None, remaining=0, delivered=False
+Drone 20: current=start, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 4
+Drone 1: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 2: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 5: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=start, target=None, remaining=0, delivered=False
+Drone 8: current=start, target=None, remaining=0, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=start, target=None, remaining=0, delivered=False
+Drone 11: current=start, target=None, remaining=0, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=start, target=None, remaining=0, delivered=False
+Drone 14: current=start, target=None, remaining=0, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=start, target=None, remaining=0, delivered=False
+Drone 17: current=start, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=start, target=None, remaining=0, delivered=False
+Drone 20: current=start, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 5
+Drone 1: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 2: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 5: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 8: current=start, target=None, remaining=0, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=start, target=None, remaining=0, delivered=False
+Drone 11: current=start, target=None, remaining=0, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=start, target=None, remaining=0, delivered=False
+Drone 14: current=start, target=None, remaining=0, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=start, target=None, remaining=0, delivered=False
+Drone 17: current=start, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=start, target=None, remaining=0, delivered=False
+Drone 20: current=start, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 6
+Drone 1: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 2: current=micro_gate1, target=overflow_hell4, remaining=2, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 5: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 8: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=start, target=None, remaining=0, delivered=False
+Drone 11: current=start, target=None, remaining=0, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=start, target=None, remaining=0, delivered=False
+Drone 14: current=start, target=None, remaining=0, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=start, target=None, remaining=0, delivered=False
+Drone 17: current=start, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=start, target=None, remaining=0, delivered=False
+Drone 20: current=start, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 7
+Drone 1: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 2: current=micro_gate1, target=overflow_hell4, remaining=1, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 5: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 8: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 11: current=start, target=None, remaining=0, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=start, target=None, remaining=0, delivered=False
+Drone 14: current=start, target=None, remaining=0, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=start, target=None, remaining=0, delivered=False
+Drone 17: current=start, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=start, target=None, remaining=0, delivered=False
+Drone 20: current=start, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 8
+Drone 1: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 2: current=overflow_hell4, target=conv_restricted7, remaining=2, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 5: current=micro_gate1, target=overflow_hell4, remaining=2, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 8: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 11: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=start, target=None, remaining=0, delivered=False
+Drone 14: current=start, target=None, remaining=0, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=start, target=None, remaining=0, delivered=False
+Drone 17: current=start, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=start, target=None, remaining=0, delivered=False
+Drone 20: current=start, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 9
+Drone 1: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 2: current=overflow_hell4, target=conv_restricted7, remaining=1, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 5: current=micro_gate1, target=overflow_hell4, remaining=1, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 8: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 11: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 14: current=start, target=None, remaining=0, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=start, target=None, remaining=0, delivered=False
+Drone 17: current=start, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=start, target=None, remaining=0, delivered=False
+Drone 20: current=start, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 10
+Drone 1: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 2: current=conv_restricted7, target=conv_restricted8, remaining=2, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 5: current=overflow_hell4, target=conv_restricted7, remaining=2, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 8: current=micro_gate1, target=overflow_hell4, remaining=2, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 11: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 14: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=start, target=None, remaining=0, delivered=False
+Drone 17: current=start, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=start, target=None, remaining=0, delivered=False
+Drone 20: current=start, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 11
+Drone 1: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 2: current=conv_restricted7, target=conv_restricted8, remaining=1, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 5: current=overflow_hell4, target=conv_restricted7, remaining=1, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 8: current=micro_gate1, target=overflow_hell4, remaining=1, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 11: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 14: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 17: current=start, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=start, target=None, remaining=0, delivered=False
+Drone 20: current=start, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 12
+Drone 1: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 2: current=conv_restricted8, target=conv_restricted9, remaining=2, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 5: current=conv_restricted7, target=conv_restricted8, remaining=2, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 8: current=overflow_hell4, target=conv_restricted7, remaining=2, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 11: current=micro_gate1, target=overflow_hell4, remaining=2, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 14: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 17: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=start, target=None, remaining=0, delivered=False
+Drone 20: current=start, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 13
+Drone 1: current=final_merge, target=None, remaining=0, delivered=False
+Drone 2: current=conv_restricted8, target=conv_restricted9, remaining=1, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 5: current=conv_restricted7, target=conv_restricted8, remaining=1, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 8: current=overflow_hell4, target=conv_restricted7, remaining=1, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 11: current=micro_gate1, target=overflow_hell4, remaining=1, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 14: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 17: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 20: current=start, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 14
+Drone 1: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 2: current=final_merge, target=None, remaining=0, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 5: current=conv_restricted8, target=conv_restricted9, remaining=2, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 8: current=conv_restricted7, target=conv_restricted8, remaining=2, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 11: current=overflow_hell4, target=conv_restricted7, remaining=2, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 14: current=micro_gate1, target=overflow_hell4, remaining=2, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 17: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 20: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=start, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 15
+Drone 1: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 2: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=final_merge, target=None, remaining=0, delivered=False
+Drone 5: current=conv_restricted8, target=conv_restricted9, remaining=1, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 8: current=conv_restricted7, target=conv_restricted8, remaining=1, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 11: current=overflow_hell4, target=conv_restricted7, remaining=1, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 14: current=micro_gate1, target=overflow_hell4, remaining=1, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 17: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 20: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 23: current=start, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 16
+Drone 1: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 2: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 5: current=final_merge, target=None, remaining=0, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 8: current=conv_restricted8, target=conv_restricted9, remaining=2, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 11: current=conv_restricted7, target=conv_restricted8, remaining=2, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 14: current=overflow_hell4, target=conv_restricted7, remaining=2, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 17: current=micro_gate1, target=overflow_hell4, remaining=2, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 20: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 23: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=start, target=None, remaining=0, delivered=False
+
+Turn 17
+Drone 1: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 2: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 3: current=start, target=None, remaining=0, delivered=False
+Drone 4: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 5: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=final_merge, target=None, remaining=0, delivered=False
+Drone 8: current=conv_restricted8, target=conv_restricted9, remaining=1, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 11: current=conv_restricted7, target=conv_restricted8, remaining=1, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 14: current=overflow_hell4, target=conv_restricted7, remaining=1, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 17: current=micro_gate1, target=overflow_hell4, remaining=1, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 20: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 23: current=maze_trap_a1, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=gate_hell1, target=None, remaining=0, delivered=False
+
+Turn 18
+Drone 1: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 2: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 3: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 4: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 5: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 6: current=start, target=None, remaining=0, delivered=False
+Drone 7: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 8: current=final_merge, target=None, remaining=0, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 11: current=conv_restricted8, target=conv_restricted9, remaining=2, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 14: current=conv_restricted7, target=conv_restricted8, remaining=2, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 17: current=overflow_hell4, target=conv_restricted7, remaining=2, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 20: current=micro_gate1, target=overflow_hell4, remaining=2, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 23: current=maze_trap_a2, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=maze_trap_a1, target=None, remaining=0, delivered=False
+
+Turn 19
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 3: current=gate_hell2, target=None, remaining=0, delivered=False
+Drone 4: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 5: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 6: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 7: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 8: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 9: current=start, target=None, remaining=0, delivered=False
+Drone 10: current=final_merge, target=None, remaining=0, delivered=False
+Drone 11: current=conv_restricted8, target=conv_restricted9, remaining=1, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 14: current=conv_restricted7, target=conv_restricted8, remaining=1, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 17: current=overflow_hell4, target=conv_restricted7, remaining=1, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 20: current=micro_gate1, target=overflow_hell4, remaining=1, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 23: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=maze_trap_a2, target=None, remaining=0, delivered=False
+
+Turn 20
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=maze_trap_b1, target=None, remaining=0, delivered=False
+Drone 4: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 5: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 6: current=gate_hell2, target=None, remaining=0, delivered=False
+Drone 7: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 8: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 9: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 10: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 11: current=final_merge, target=None, remaining=0, delivered=False
+Drone 12: current=start, target=None, remaining=0, delivered=False
+Drone 13: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 14: current=conv_restricted8, target=conv_restricted9, remaining=2, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 17: current=conv_restricted7, target=conv_restricted8, remaining=2, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 20: current=overflow_hell4, target=conv_restricted7, remaining=2, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 23: current=micro_gate1, target=overflow_hell4, remaining=2, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=micro_gate1, target=None, remaining=0, delivered=False
+
+Turn 21
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 6: current=maze_trap_b1, target=None, remaining=0, delivered=False
+Drone 7: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 8: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 9: current=gate_hell2, target=None, remaining=0, delivered=False
+Drone 10: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 11: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 12: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 13: current=final_merge, target=None, remaining=0, delivered=False
+Drone 14: current=conv_restricted8, target=conv_restricted9, remaining=1, delivered=False
+Drone 15: current=start, target=None, remaining=0, delivered=False
+Drone 16: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 17: current=conv_restricted7, target=conv_restricted8, remaining=1, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 20: current=overflow_hell4, target=conv_restricted7, remaining=1, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 23: current=micro_gate1, target=overflow_hell4, remaining=1, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+
+Turn 22
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 7: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 8: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 9: current=maze_trap_b1, target=None, remaining=0, delivered=False
+Drone 10: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 11: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 12: current=gate_hell2, target=None, remaining=0, delivered=False
+Drone 13: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 14: current=final_merge, target=None, remaining=0, delivered=False
+Drone 15: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 16: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 17: current=conv_restricted8, target=conv_restricted9, remaining=2, delivered=False
+Drone 18: current=start, target=None, remaining=0, delivered=False
+Drone 19: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 20: current=conv_restricted7, target=conv_restricted8, remaining=2, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 23: current=overflow_hell4, target=conv_restricted7, remaining=2, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+
+Turn 23
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 9: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 10: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 11: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 12: current=maze_trap_b1, target=None, remaining=0, delivered=False
+Drone 13: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 14: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 15: current=gate_hell2, target=None, remaining=0, delivered=False
+Drone 16: current=final_merge, target=None, remaining=0, delivered=False
+Drone 17: current=conv_restricted8, target=conv_restricted9, remaining=1, delivered=False
+Drone 18: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 19: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 20: current=conv_restricted7, target=conv_restricted8, remaining=1, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 23: current=overflow_hell4, target=conv_restricted7, remaining=1, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+
+Turn 24
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 10: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 11: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 12: current=maze_trap_b1, target=None, remaining=0, delivered=False
+Drone 13: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 14: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 15: current=gate_hell2, target=None, remaining=0, delivered=False
+Drone 16: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 17: current=final_merge, target=None, remaining=0, delivered=False
+Drone 18: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 19: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 20: current=conv_restricted8, target=conv_restricted9, remaining=2, delivered=False
+Drone 21: current=start, target=None, remaining=0, delivered=False
+Drone 22: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 23: current=conv_restricted7, target=conv_restricted8, remaining=2, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+
+Turn 25
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 12: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 13: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 14: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 15: current=maze_trap_b1, target=None, remaining=0, delivered=False
+Drone 16: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 17: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 18: current=gate_hell2, target=None, remaining=0, delivered=False
+Drone 19: current=final_merge, target=None, remaining=0, delivered=False
+Drone 20: current=conv_restricted8, target=conv_restricted9, remaining=1, delivered=False
+Drone 21: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 22: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 23: current=conv_restricted7, target=conv_restricted8, remaining=1, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+
+Turn 26
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 13: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 14: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 15: current=maze_trap_b1, target=None, remaining=0, delivered=False
+Drone 16: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 17: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 18: current=gate_hell2, target=None, remaining=0, delivered=False
+Drone 19: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 20: current=final_merge, target=None, remaining=0, delivered=False
+Drone 21: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 22: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 23: current=conv_restricted8, target=conv_restricted9, remaining=2, delivered=False
+Drone 24: current=start, target=None, remaining=0, delivered=False
+Drone 25: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+
+Turn 27
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 15: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 16: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 17: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 18: current=maze_trap_b1, target=None, remaining=0, delivered=False
+Drone 19: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 20: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 21: current=gate_hell2, target=None, remaining=0, delivered=False
+Drone 22: current=final_merge, target=None, remaining=0, delivered=False
+Drone 23: current=conv_restricted8, target=conv_restricted9, remaining=1, delivered=False
+Drone 24: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 25: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+
+Turn 28
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 16: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 17: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 18: current=maze_trap_b1, target=None, remaining=0, delivered=False
+Drone 19: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 20: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 21: current=gate_hell2, target=None, remaining=0, delivered=False
+Drone 22: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 23: current=final_merge, target=None, remaining=0, delivered=False
+Drone 24: current=gate_hell1, target=None, remaining=0, delivered=False
+Drone 25: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+
+Turn 29
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 18: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 19: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 20: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 21: current=maze_trap_b1, target=None, remaining=0, delivered=False
+Drone 22: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 23: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 24: current=gate_hell2, target=None, remaining=0, delivered=False
+Drone 25: current=final_merge, target=None, remaining=0, delivered=False
+
+Turn 30
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 19: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 20: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 21: current=maze_trap_b1, target=None, remaining=0, delivered=False
+Drone 22: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 23: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 24: current=gate_hell2, target=None, remaining=0, delivered=False
+Drone 25: current=final_torture1, target=None, remaining=0, delivered=False
+
+Turn 31
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=final_merge, target=None, remaining=0, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 21: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 22: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 23: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 24: current=maze_trap_b1, target=None, remaining=0, delivered=False
+Drone 25: current=final_torture2, target=None, remaining=0, delivered=False
+
+Turn 32
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 22: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 23: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 24: current=maze_trap_b1, target=None, remaining=0, delivered=False
+Drone 25: current=final_torture3, target=None, remaining=0, delivered=False
+
+Turn 33
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=final_merge, target=None, remaining=0, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 24: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 25: current=final_torture4, target=None, remaining=0, delivered=False
+
+Turn 34
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=maze_trap_b2, target=None, remaining=0, delivered=False
+Drone 25: current=final_torture5, target=None, remaining=0, delivered=False
+
+Turn 35
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=final_merge, target=None, remaining=0, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 36
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=micro_gate1, target=None, remaining=0, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 37
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=final_merge, target=None, remaining=0, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=micro_gate1, target=overflow_hell1, remaining=2, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 38
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=micro_gate1, target=overflow_hell1, remaining=1, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 39
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=final_merge, target=None, remaining=0, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=overflow_hell1, target=conv_restricted1, remaining=2, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 40
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=overflow_hell1, target=conv_restricted1, remaining=1, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 41
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=final_merge, target=None, remaining=0, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=conv_restricted1, target=conv_restricted2, remaining=2, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 42
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=conv_restricted1, target=conv_restricted2, remaining=1, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 43
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=final_merge, target=None, remaining=0, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=conv_restricted2, target=conv_restricted3, remaining=2, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 44
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=conv_restricted2, target=conv_restricted3, remaining=1, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 45
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=final_merge, target=None, remaining=0, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 46
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=final_torture1, target=None, remaining=0, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 47
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=final_torture2, target=None, remaining=0, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 48
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=final_torture3, target=None, remaining=0, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 49
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=final_torture4, target=None, remaining=0, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 50
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=final_torture5, target=None, remaining=0, delivered=False
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Turn 51
+Drone 1: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 2: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 3: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 4: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 5: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 6: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 7: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 8: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 9: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 10: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 11: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 12: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 13: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 14: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 15: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 16: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 17: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 18: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 19: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 20: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 21: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 22: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 23: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 24: current=impossible_goal, target=None, remaining=0, delivered=True
+Drone 25: current=impossible_goal, target=None, remaining=0, delivered=True
+
+Simulation finished in 51 turns
+
