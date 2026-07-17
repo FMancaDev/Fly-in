@@ -1,3 +1,6 @@
 pygame
 pytest
 autopep8
+pygame==2.6.1
+pytest
+autopep8
