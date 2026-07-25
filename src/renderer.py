@@ -194,6 +194,36 @@ class Renderer:
             border_radius=radius,
         )
 
+    def _wrap_text(
+        self,
+        text: str,
+        font: pygame.font.Font,
+        max_width: int,
+    ) -> list[str]:
+        words = text.split()
+        lines: list[str] = []
+        current_line = ""
+
+        for word in words:
+            candidate = (
+                word
+                if not current_line
+                else f"{current_line} {word}"
+            )
+
+            if font.size(candidate)[0] <= max_width:
+                current_line = candidate
+            else:
+                if current_line:
+                    lines.append(current_line)
+
+                current_line = word
+
+        if current_line:
+            lines.append(current_line)
+
+        return lines
+
     def _calculate_positions(self) -> None:
         hubs = list(self.graph.hubs.values())
 
@@ -241,19 +271,18 @@ class Renderer:
             )
 
     def _hub_usage(self, hub: Hub) -> int:
-        usage = 0
+        if hub == self.graph.end_hub:
+            return self._delivered_count()
 
-        for drone in self.simulation.drones:
-            if drone.delivered:
-                continue
-
-            if drone.current_hub != hub:
-                continue
-
-            if drone.target_hub is None:
-                usage += 1
-
-        return usage
+        return sum(
+            1
+            for drone in self.simulation.drones
+            if (
+                not drone.delivered
+                and drone.current_hub == hub
+                and drone.target_hub is None
+            )
+        )
 
     def _connection_usage(self, connection) -> int:
         usage = 0
@@ -289,6 +318,13 @@ class Renderer:
             for drone in self.simulation.drones
             if drone.delivered
         )
+
+    def _delivered_drone_ids(self) -> list[int]:
+        return [
+            drone.id
+            for drone in self.simulation.drones
+            if drone.delivered
+        ]
 
     def _in_transit_count(self) -> int:
         return sum(
@@ -462,7 +498,15 @@ class Renderer:
 
         if connection is not None:
             total_turns = max(
-                getattr(connection, "weight", 1),
+                getattr(
+                    connection,
+                    "weight",
+                    getattr(
+                        connection,
+                        "travel_time",
+                        1,
+                    ),
+                ),
                 1,
             )
 
@@ -511,7 +555,10 @@ class Renderer:
         return None
 
     def _draw_drones(self) -> None:
-        grouped: defaultdict[Point, list[Drone]] = defaultdict(list)
+        grouped: defaultdict[
+            Point,
+            list[Drone],
+        ] = defaultdict(list)
 
         for drone in self.simulation.drones:
             if drone.delivered:
@@ -696,11 +743,36 @@ class Renderer:
         )
 
         controls = [
-            ("▶", "SPACE", "Play / Pause", self.ACCENT_COLOR),
-            ("→", "RIGHT", "Next turn", self.ACCENT_COLOR),
-            ("↑", "UP", "Faster", self.ACCENT_COLOR),
-            ("↓", "DOWN", "Slower", self.ACCENT_COLOR),
-            ("■", "ESC", "Exit", self.FULL_COLOR),
+            (
+                ">",
+                "SPACE",
+                "Play / Pause",
+                self.ACCENT_COLOR,
+            ),
+            (
+                ">",
+                "RIGHT",
+                "Next turn",
+                self.ACCENT_COLOR,
+            ),
+            (
+                "^",
+                "UP",
+                "Faster",
+                self.ACCENT_COLOR,
+            ),
+            (
+                "v",
+                "DOWN",
+                "Slower",
+                self.ACCENT_COLOR,
+            ),
+            (
+                "x",
+                "ESC",
+                "Exit",
+                self.FULL_COLOR,
+            ),
         ]
 
         line_y = rect.y + 68
@@ -746,18 +818,19 @@ class Renderer:
         items: list[LegendItem] = []
         used_labels: set[str] = set()
 
-        start_item = LegendItem(
-            "Start",
-            self.COLOR_NAMES["green"],
+        items.append(
+            LegendItem(
+                "Start",
+                self.COLOR_NAMES["green"],
+            )
         )
 
-        goal_item = LegendItem(
-            "Goal",
-            self.COLOR_NAMES["magenta"],
+        items.append(
+            LegendItem(
+                "Goal",
+                self.COLOR_NAMES["magenta"],
+            )
         )
-
-        items.append(start_item)
-        items.append(goal_item)
 
         used_labels.add("Start")
         used_labels.add("Goal")
@@ -794,7 +867,11 @@ class Renderer:
         legend = self._build_legend()
 
         columns = 2
-        rows = (len(legend) + columns - 1) // columns
+        rows = (
+            len(legend)
+            + columns
+            - 1
+        ) // columns
 
         card_height = 60 + rows * 34
 
@@ -814,7 +891,9 @@ class Renderer:
             (rect.x + 20, rect.y + 16),
         )
 
-        column_width = (rect.width - 40) // columns
+        column_width = (
+            rect.width - 40
+        ) // columns
 
         for index, item in enumerate(legend):
             column = index % columns
@@ -865,25 +944,48 @@ class Renderer:
             panel_x + 20,
             y,
             self.PANEL_WIDTH - 40,
-            105,
+            125,
         )
 
         self._draw_rounded_card(rect)
 
         if self.hovered_hub is None:
+            delivered_ids = self._delivered_drone_ids()
+
             self._render_text(
-                "Hub information",
+                "Delivered drones",
                 self.section_font,
                 self.TEXT_COLOR,
                 (rect.x + 20, rect.y + 16),
             )
 
-            self._render_text(
-                "Move the mouse over a hub",
+            if not delivered_ids:
+                delivered_text = "None"
+                delivered_color = self.MUTED_TEXT
+            else:
+                delivered_text = ", ".join(
+                    str(drone_id)
+                    for drone_id in delivered_ids
+                )
+                delivered_color = self.SUCCESS_COLOR
+
+            lines = self._wrap_text(
+                delivered_text,
                 self.small_font,
-                self.MUTED_TEXT,
-                (rect.x + 20, rect.y + 57),
+                rect.width - 40,
             )
+
+            line_y = rect.y + 55
+
+            for line in lines[:3]:
+                self._render_text(
+                    line,
+                    self.small_font,
+                    delivered_color,
+                    (rect.x + 20, line_y),
+                )
+
+                line_y += 22
 
             return rect.bottom + 18
 
@@ -896,7 +998,9 @@ class Renderer:
         elif hub == self.graph.end_hub:
             zone_name = "Goal"
         else:
-            zone_name = self._display_zone_name(color_name)
+            zone_name = self._display_zone_name(
+                color_name
+            )
 
         pygame.draw.circle(
             self.screen,
@@ -925,6 +1029,25 @@ class Renderer:
             self.MUTED_TEXT,
             (rect.x + 20, rect.y + 79),
         )
+
+        if hub == self.graph.end_hub:
+            delivered_ids = self._delivered_drone_ids()
+
+            delivered_text = (
+                "None"
+                if not delivered_ids
+                else ", ".join(
+                    str(drone_id)
+                    for drone_id in delivered_ids
+                )
+            )
+
+            self._render_text(
+                f"Delivered IDs: {delivered_text}",
+                self.small_font,
+                self.SUCCESS_COLOR,
+                (rect.x + 20, rect.y + 101),
+            )
 
         return rect.bottom + 18
 
@@ -994,7 +1117,6 @@ class Renderer:
 
         self._draw_finished_card(panel_x, y)
 
-    # mouse interaction
     def _update_hovered_hub(self) -> None:
         mouse_x, mouse_y = pygame.mouse.get_pos()
 
@@ -1012,9 +1134,15 @@ class Renderer:
             dx = mouse_x - position[0]
             dy = mouse_y - position[1]
 
-            distance_squared = dx * dx + dy * dy
+            distance_squared = (
+                dx * dx
+                + dy * dy
+            )
 
-            if distance_squared <= self.HUB_RADIUS ** 2:
+            if (
+                distance_squared
+                <= self.HUB_RADIUS ** 2
+            ):
                 self.hovered_hub = hub
                 return
 
@@ -1083,11 +1211,13 @@ class Renderer:
 
         now = pygame.time.get_ticks()
 
-        if now - self.last_turn_time >= self.turn_delay:
+        if (
+            now - self.last_turn_time
+            >= self.turn_delay
+        ):
             self.simulation.simulate_turn()
             self.last_turn_time = now
 
-    # rendering
     def _draw(self) -> None:
         self.screen.fill(self.BACKGROUND)
 
