@@ -6,7 +6,7 @@ PIP := $(VENV)/bin/pip
 PYTEST := $(VENV)/bin/pytest
 AUTOPEP8 := $(VENV)/bin/autopep8
 
-SYSTEM_PYTHON := python3
+SYSTEM_PYTHON := python3.12
 MAIN := main.py
 
 MAP ?= maps/easy/01_linear_path.txt
