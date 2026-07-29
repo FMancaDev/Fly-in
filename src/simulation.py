@@ -60,7 +60,8 @@ class Simulation:
             )
 
     def _edge_key(self, first: Hub, second: Hub) -> LinkKey:
-        return tuple(sorted((first.name, second.name)))
+        first_name, second_name = sorted((first.name, second.name))
+        return first_name, second_name
 
     def _get_connection(
         self,
@@ -289,11 +290,14 @@ class Simulation:
             ):
                 continue
 
+            current_hub = drone.current_hub
+
             if (
-                drone.remaining_turns == 0
+                current_hub is not None
+                and drone.remaining_turns == 0
                 and drone.target_hub is None
             ):
-                occupancy[drone.current_hub.name] += 1
+                occupancy[current_hub.name] += 1
 
         return dict(occupancy)
 
@@ -307,10 +311,16 @@ class Simulation:
             ):
                 continue
 
+            current_hub = drone.current_hub
+            target_hub = drone.target_hub
+
+            if current_hub is None or target_hub is None:
+                continue
+
             usage[
                 self._edge_key(
-                    drone.current_hub,
-                    drone.target_hub,
+                    current_hub,
+                    target_hub,
                 )
             ] += 1
 
@@ -364,6 +374,11 @@ class Simulation:
                 if drone.path_index + 1 >= len(drone.path):
                     continue
 
+                current_hub = drone.current_hub
+
+                if current_hub is None:
+                    continue
+
                 next_hub = drone.path[drone.path_index + 1]
 
                 if (
@@ -375,7 +390,7 @@ class Simulation:
                     continue
 
                 connection = self._get_connection(
-                    drone.current_hub,
+                    current_hub,
                     next_hub,
                 )
 
@@ -383,7 +398,7 @@ class Simulation:
                     continue
 
                 link_key = self._edge_key(
-                    drone.current_hub,
+                    current_hub,
                     next_hub,
                 )
 
@@ -393,8 +408,8 @@ class Simulation:
                 ):
                     continue
 
-                if drone.current_hub != self.graph.start_hub:
-                    current_name = drone.current_hub.name
+                if current_hub != self.graph.start_hub:
+                    current_name = current_hub.name
                     hub_occupancy[current_name] = max(
                         0,
                         hub_occupancy.get(current_name, 0) - 1,

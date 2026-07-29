@@ -170,7 +170,7 @@ class Renderer:
         font: pygame.font.Font,
         color: Color,
         position: Point,
-    ) -> pygame.Rect:
+    ) -> pygame.rect.Rect:
         surface = font.render(text, True, color)
         return self.screen.blit(surface, position)
 

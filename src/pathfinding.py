@@ -8,7 +8,8 @@ Edge = tuple[str, str]
 
 class Pathfinder:
     def _edge_key(self, first: str, second: str) -> Edge:
-        return tuple(sorted((first, second)))
+        first, second = (sorted((first, second)))
+        return first, second
 
     def _movement_cost(self, hub: Hub) -> float:
         if hub.zone_type == ZoneType.RESTRICTED:
