@@ -4,12 +4,12 @@ VENV := .venv
 PYTHON := $(VENV)/bin/python
 PIP := $(VENV)/bin/pip
 
-SYSTEM_PYTHON := python3.12
+SYSTEM_PYTHON := python3
 MAIN := main.py
 
 MAP ?= maps/easy/01_linear_path.txt
 
-.PHONY: install run debug clean fclean re lint lint-strict
+.PHONY: install run graphics debug clean fclean re lint lint-strict
 
 install:
 	@if [ ! -d "$(VENV)" ]; then \
@@ -20,6 +20,9 @@ install:
 
 run: install
 	$(PYTHON) $(MAIN) $(MAP)
+
+graphics: install
+	$(PYTHON) $(MAIN) $(MAP) --graphics
 
 debug: install
 	$(PYTHON) -m pdb $(MAIN) $(MAP)
